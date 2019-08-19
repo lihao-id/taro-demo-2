@@ -1,0 +1,51 @@
+.cards {
+  .swiper {
+    height: 376px;
+    .swiper-item {
+      width: 88% !important;
+    }
+  }
+  > .bottom {
+    margin-top: 85px;
+    display: flex;
+    padding-left: 112px;
+    padding-right: 111px;
+    justify-content: space-between;
+
+    > .item {
+      text-align: center;
+      >.img{
+          vertical-align: bottom;
+      }
+      > .num {
+        margin-top: 19px;
+        font-size: 22px;
+        line-height: 1;
+        font-family: PingFangSC-Regular;
+        font-weight: 400;
+        color: rgba(117, 118, 121, 1);
+      }
+    }
+
+    .like {
+      .img-like {
+        width: 40px;
+        height: 38px;
+      }
+    }
+
+    .leave-message {
+      .img-leave-message {
+        width: 44px;
+        height: 44px;
+      }
+    }
+
+    .share {
+      .img-share {
+        width: 46px;
+        height: 38px;
+      }
+    }
+  }
+}

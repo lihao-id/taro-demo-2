@@ -1,13 +1,24 @@
 {
 	"miniprogramRoot": "dist/",
-	"projectname": "taro-demo-2",
+	"projectname": "business-card",
 	"description": "taro-demo-2项目",
 	"appid": "wxea9c3a8b2f8ca1cf",
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": false,
 		"postcss": false,
-		"minified": false
+		"minified": false,
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
 	},
 	"compileType": "miniprogram",
 	"simulatorType": "wechat",

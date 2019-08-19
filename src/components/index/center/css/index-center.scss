@@ -1,0 +1,49 @@
+.index-center {
+  height: 744px;
+  padding-top: 39px;
+  box-sizing: border-box;
+  &__tabs {
+    height: 36px;
+    margin-left: 36px;
+    @mixin item() {
+      font-family: PingFangSC-Medium;
+      line-height: 38px;
+    }
+    .item {
+      @include item;
+      font-size: 34px;
+      font-weight: 500;
+      color: rgba(59, 60, 62, 1);
+      &:not(:first-child) {
+        margin-left: 78px;
+      }
+    }
+    .active {
+      @include item;
+      font-size: 38px;
+      font-weight: 600;
+      color: rgba(29, 29, 30, 1);
+      position: relative;
+      &::after {
+        position: absolute;
+        content:'';
+        margin:auto;
+        left:0;
+        right:0;
+        bottom: -25px;
+        width: 96px;
+        height: 4px;
+        background: linear-gradient(
+          90deg,
+          rgba(68, 76, 239, 1),
+          rgba(217, 52, 252, 1)
+        );
+        border-radius: 2px;
+      }
+    }
+  }
+  &__content{
+      padding-top:69px;
+      box-sizing: border-box;
+  }
+}

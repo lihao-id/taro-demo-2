@@ -1,13 +1,13 @@
-import { ADD, MINUS } from "./action-type";
+import * as type from "./action-type";
 
 export const add = () => {
   return {
-    type: ADD
+    type: type.ADD
   };
 };
 export const minus = () => {
   return {
-    type: MINUS
+    type: type.MINUS
   };
 };
 
@@ -19,3 +19,32 @@ export function asyncAdd() {
     }, 500);
   };
 }
+
+/**
+ * 设置通知的个数
+ * @param {*} count
+ */
+export const setNotifyCount = count => {
+  return {
+    type: type.SET_NOTIFY_COUNT,
+    count: count
+  };
+};
+
+/**
+ * 设置cardInfoList
+ * @param {*} cardInfoList
+ */
+export const setCardInfoList = cardInfoList => {
+  return {
+    type: type.SET_CARD_INFO_LIST,
+    cardInfoList: cardInfoList
+  };
+};
+
+export const setCurrentCardIndex = index => {
+  return {
+    type: type.SET_CURRENT_CARD_INDEX,
+    index: index
+  };
+};

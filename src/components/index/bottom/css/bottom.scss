@@ -1,0 +1,39 @@
+.index-bottom {
+  padding-top: 37px;
+  padding-left: 38px;
+  padding-right: 50px;
+  padding-bottom: 61px;
+  box-sizing: border-box;
+  &__title {
+    display: flex;
+    align-items: center;
+    .img-signature {
+      width: 30px;
+      height: 30px;
+      display: block;
+      //   background: linear-gradient(
+      //     45deg,
+      //     rgba(83, 36, 187, 1),
+      //     rgba(123, 185, 250, 1)
+      //   );
+      //   border-radius: 50%;
+    }
+    .text {
+      display: block;
+      font-size: 26px;
+      font-family: PingFangSC-Medium;
+      font-weight: 500;
+      color: rgba(128, 130, 135, 1);
+      line-height: 1;
+      margin-left: 13px;
+    }
+  }
+  &__content {
+    margin-top: 21px;
+
+    font-size: 26px;
+    font-family: PingFangSC-Medium;
+    font-weight: 500;
+    color: rgba(128, 130, 135, 1);
+  }
+}

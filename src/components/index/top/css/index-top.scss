@@ -1,0 +1,74 @@
+.index-top {
+  height: 327px;
+  padding-top: 104px;
+  position: relative;
+  > .bg-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: -1000;
+  }
+  &-content {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+  }
+  &__title {
+    @mixin title() {
+      font-family: PingFangSC-Semibold;
+      color: rgba(255, 255, 255, 1);
+      line-height: 1;
+      margin-left: 32px;
+    }
+    &--big {
+      @include title;
+      font-size: 48px;
+      font-weight: 600;
+    }
+    &--small {
+      @include title;
+      font-size: 38px;
+      font-weight: 500;
+      opacity: 0.9;
+      margin-top: 17px;
+    }
+  }
+  &__bell {
+    width: 38px;
+    height: 42px;
+    position: relative;
+    // box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.35);
+    > .img {
+      width: 100%;
+      height: 100%;
+    }
+    > .notify-count {
+      width: 28px;
+      height: 28px;
+      background: rgba(239, 53, 88, 1);
+      border-radius: 50%;
+      color: #fff;
+
+      font-size: 22px;
+      font-family: PingFangSC-Regular;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 1);
+      text-align: center;
+      line-height: 28px;
+
+      position:absolute;
+      top:0;
+      right:-40%;
+    }
+  }
+  &__search {
+    width: 64px;
+    height: 64px;
+    position: absolute;
+    right: 28px;
+    bottom: -30%;
+    // background:rgba(244,246,246,1);
+    // border-radius:10px;
+  }
+}
