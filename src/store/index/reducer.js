@@ -1,4 +1,4 @@
-/* eslint-disable import/prefer-default-export */
+
 import * as type from "./action-type";
 
 export const counter = (state = 0, action = {}) => {

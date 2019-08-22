@@ -1,0 +1,30 @@
+.assistant-button {
+  position: fixed;
+  z-index: 900;
+  right: 20px;
+  bottom: 140px;
+
+  width: 84px;
+  height: 88px;
+  background: linear-gradient(
+    30deg,
+    rgba(60, 138, 218, 1) 0%,
+    rgba(147, 228, 248, 1) 100%
+  );
+  .message {
+    position: absolute;
+    width: 33px;
+    height: 33px;
+    background: rgba(242, 46, 73, 1);
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    text-align: center;
+    vertical-align: middle;
+
+    font-size: 23px;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 1);
+  }
+}

@@ -2,7 +2,7 @@ import "@tarojs/async-await";
 import Taro, { Component } from "@tarojs/taro";
 import { Provider } from "@tarojs/redux";
 
-import Index from "./pages/index";
+import Index from "pages/index/index";
 
 import configStore from "./store";
 
@@ -26,12 +26,17 @@ class App extends Component {
   componentDidCatchError() {}
 
   config = {
-    pages: ["pages/index/index"],
+    pages: [
+      "pages/index/index",
+      "pages/home/Home",
+      "pages/search/Search",
+      "pages/leave-message/LeaveMessage"
+    ],
     window: {
       backgroundTextStyle: "light",
-    //   navigationBarBackgroundColor: "#fff",
-    //   navigationBarTitleText: "WeChat",
-    //   navigationBarTextStyle: "black",
+      //   navigationBarBackgroundColor: "#fff",
+      //   navigationBarTitleText: "WeChat",
+      //   navigationBarTextStyle: "black",
       navigationStyle: "custom"
     }
   };

@@ -2,7 +2,7 @@ import Taro, { Component } from "@tarojs/taro";
 
 import { View, Text, Image } from "@tarojs/components";
 
-import * as IndexContext from "pages/index/context";
+import * as IndexContext from "@/context/index/context";
 
 import "./css/index-top.scss";
 
@@ -13,7 +13,9 @@ class IndexTop extends Component {
   }
 
   onClickSearch() {
-    console.log("click-search");
+    Taro.navigateTo({
+      url: "/pages/search/Search"
+    });
   }
 
   render() {

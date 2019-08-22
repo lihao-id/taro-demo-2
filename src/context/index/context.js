@@ -4,6 +4,7 @@ import { createContext } from "@tarojs/taro";
 export const NotifyContext = createContext({ count: 0 });
 
 export const CardInfoContext = createContext({
-  cardInfoList: [],
-  currentCardIndex: 0
+  list: [],
+  currentIndex: 0,
+  setCurrentIndex: () => {}
 });

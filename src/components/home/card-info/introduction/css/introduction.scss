@@ -1,0 +1,38 @@
+.introduction {
+  overflow: hidden;
+  &::before {
+    content: "";
+    width: 710px;
+    height: 1px;
+    border-top: 1px dotted rgba(49, 49, 49, 1);
+    opacity: 0.3;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  &__title {
+    margin-top: 49px;
+    .icon {
+      width: 30px;
+      height: 30px;
+      vertical-align: middle;
+    }
+    .text {
+      margin-left: 14px;
+      font-size: 28px;
+      font-family: PingFang SC;
+      font-weight: 500;
+      color: rgba(33, 34, 34, 1);
+      vertical-align: middle;
+    }
+  }
+  &__content {
+    margin-top: 41px;
+
+    font-size: 24px;
+    font-family: PingFang SC;
+    font-weight: 500;
+    color: rgba(98, 98, 100, 1);
+  }
+}

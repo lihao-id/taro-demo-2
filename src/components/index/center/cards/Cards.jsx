@@ -1,17 +1,15 @@
 import Taro, { Component, useContext, useEffect, useState } from "@tarojs/taro";
 import { View, Text, Swiper, SwiperItem, Image } from "@tarojs/components";
-
+import { CardInfoContext } from "@/context/index/context";
 import Card from "./card/Card";
-
 import "./css/cards.scss";
-
-import { CardInfoContext } from "pages/index/context";
 
 export default () => {
   const cardInfo = useContext(CardInfoContext);
   function onChange(param) {
     let index = param.currentTarget.current;
-    console.log(cardInfo.list[index]);
+    // console.log(cardInfo.list[index]);
+    cardInfo.setCurrentIndex(index);
   }
 
   function onClickLike() {
@@ -19,7 +17,11 @@ export default () => {
   }
 
   function onClickLeaveMessage() {
-    console.log("click-leave-message");
+    Taro.navigateTo({
+      url: `/pages/leave-message/LeaveMessage?cardId=${
+        cardInfo.list[cardInfo.currentIndex].id
+      }`
+    });
   }
 
   function onClickShare() {

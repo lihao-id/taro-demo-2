@@ -7,9 +7,9 @@ import Top from "components/index/top/IndexTop";
 import Center from "components/index/center/IndexCenter";
 import Bottom from "components/index/bottom/IndexBottom";
 
-import * as action from "store/index/action";
-import { NotifyContext, CardInfoContext } from "./context";
-// import * as API from "api/api";
+import * as Action from "store/index/action";
+import { NotifyContext, CardInfoContext } from "@/context/index/context";
+import * as Api from "api/api";
 
 import "./index.scss";
 
@@ -21,13 +21,13 @@ import "./index.scss";
   }),
   dispatch => ({
     setNotifyCount(count) {
-      dispatch(action.setNotifyCount(count));
+      dispatch(Action.setNotifyCount(count));
     },
     setCardInfoList(cardInfoList) {
-      dispatch(action.setCardInfoList(cardInfoList));
+      dispatch(Action.setCardInfoList(cardInfoList));
     },
     setCurrentCardIndex(index) {
-      dispatch(action.setCurrentCardIndex(index));
+      dispatch(Action.setCurrentCardIndex(index));
     }
   })
 )
@@ -37,14 +37,14 @@ export default class Index extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log(this.props, nextProps);
+    // console.log(this.props, nextProps);
   }
 
   componentWillMount() {
     // wx.login({
     //   success: res => {
     //     if (res.code) {
-    //       API.login({
+    //       Api.login({
     //         code: res.code
     //       }).then(res => {});
     //     }
@@ -53,7 +53,7 @@ export default class Index extends Component {
     // });
     // wx.getUserInfo({
     //   success: res => {
-    //       console.log(res);
+    //     console.log(res);
     //   }
     // });
   }
@@ -96,11 +96,15 @@ export default class Index extends Component {
         <CardInfoContext.Provider
           value={{
             list: this.props.cardInfoList,
-            currentIndex: this.props.currentCardIndex
+            currentIndex: this.props.currentCardIndex,
+            setCurrentIndex: this.props.setCurrentCardIndex
           }}
         >
           <View className='index'>
-            <Image className='bg-img' src={require("./img/bg.png")} />
+            <Image
+              className='bg-img'
+              src={Api.IMG_BASE_URL + "/index/bg.png"}
+            />
             <Top />
             <Center />
             <View className='line' />
