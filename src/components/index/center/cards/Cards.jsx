@@ -1,11 +1,14 @@
 import Taro, { Component, useContext, useEffect, useState } from "@tarojs/taro";
 import { View, Text, Swiper, SwiperItem, Image } from "@tarojs/components";
-import { CardInfoContext } from "@/context/index/context";
+import { CardInfoContext, ShareCardContext } from "@/context/index/context";
 import Card from "./card/Card";
+
 import "./css/cards.scss";
 
 export default () => {
   const cardInfo = useContext(CardInfoContext);
+  const shareCard = useContext(ShareCardContext);
+
   function onChange(param) {
     let index = param.currentTarget.current;
     // console.log(cardInfo.list[index]);
@@ -22,10 +25,6 @@ export default () => {
         cardInfo.list[cardInfo.currentIndex].id
       }`
     });
-  }
-
-  function onClickShare() {
-    console.log("click-share");
   }
 
   return (
@@ -60,7 +59,7 @@ export default () => {
           />
           <View className='num'>5914</View>
         </View>
-        <View className='share item' onClick={onClickShare}>
+        <View className='share item' onClick={shareCard.doOpen}>
           <Image className='img-share img' src={require("./img/share.png")} />
           <View className='num'>8529</View>
         </View>

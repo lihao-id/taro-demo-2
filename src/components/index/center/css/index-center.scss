@@ -5,9 +5,22 @@
   &__tabs {
     height: 36px;
     margin-left: 36px;
+    position: relative;
+
     @mixin item() {
       font-family: PingFangSC-Medium;
       line-height: 38px;
+    }
+    > .line {
+      width: 278px;
+      height: 3px;
+      background: rgba(220, 220, 220, 1);
+      position: absolute;
+      top:0;
+      bottom:0;
+      right:0;
+      margin-top:auto;
+      margin-bottom:auto;
     }
     .item {
       @include item;
@@ -26,10 +39,10 @@
       position: relative;
       &::after {
         position: absolute;
-        content:'';
-        margin:auto;
-        left:0;
-        right:0;
+        content: "";
+        margin: auto;
+        left: 0;
+        right: 0;
         bottom: -25px;
         width: 96px;
         height: 4px;
@@ -42,8 +55,8 @@
       }
     }
   }
-  &__content{
-      padding-top:69px;
-      box-sizing: border-box;
+  &__content {
+    padding-top: 69px;
+    box-sizing: border-box;
   }
 }

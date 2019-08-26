@@ -8,3 +8,7 @@ export const CardInfoContext = createContext({
   currentIndex: 0,
   setCurrentIndex: () => {}
 });
+
+export const ShareCardContext = createContext({
+  doOpen: () => {}
+});

@@ -8,14 +8,29 @@ import "./css/assistant.scss";
 export default class Assistant extends Component {
   static contextType = AssistantContext;
 
+  constructor() {
+    super(...arguments);
+    this.state = {
+      input: ""
+    };
+  }
+
   getImg(url) {
     return Api.IMG_BASE_URL + "/assistant" + url;
   }
 
-  onInputChange(e) {
-    // assistant.setInput(e.target.value);
-    const { value } = e.detail;
+  onInputChange(param) {
+    const { value } = param.detail;
     console.log(value);
+    this.setState({
+      input: value
+    });
+  }
+
+  toService() {
+    Taro.navigateTo({
+      url: "/pages/service/Service"
+    });
   }
 
   render() {
@@ -29,25 +44,23 @@ export default class Assistant extends Component {
           <View className='title'>AI智能机器人助手</View>
           <View className='content' />
           <View className='menu'>
-            {/* <View className='service-btn btn'> */}
             <Image
               className='service-icon menu-icon'
               src={this.getImg("/service.png")}
+              onClick={this.toService}
             />
-            {/* </View> */}
-            {/* <View className='input-btn btn'> */}
             <Image
               className='input-icon menu-icon'
               src={this.getImg("/input.png")}
             />
-            {/* </View> */}
           </View>
           <Image className='voice-icon' src={this.getImg("/voice.png")} />
         </View>
         <Input
           className='assistant__input'
-          value={assistant.input}
-          bindinput={this.onInputChange.bind(this)}
+          value={this.state.input}
+          onInput={this.onInputChange.bind(this)}
+          placeholder='我想要说...'
         />
       </View>
     );

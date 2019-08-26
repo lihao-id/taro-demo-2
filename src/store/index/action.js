@@ -48,3 +48,10 @@ export const setCurrentCardIndex = index => {
     index: index
   };
 };
+
+export const setShowShareCard = value => {
+  return {
+    type: type.SET_SHOW_SHARE_CARD,
+    value: value
+  };
+};

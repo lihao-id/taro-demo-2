@@ -5,7 +5,7 @@ import { AtTabs, AtTabsPane } from "taro-ui";
 import "./css/index-center.scss";
 
 import Cards from "./cards/Cards";
-import UserInfo from "./user-info/UserInfo";
+import User from "./user/User";
 
 class IndexCenter extends Component {
   constructor() {
@@ -37,10 +37,11 @@ class IndexCenter extends Component {
           >
             个人信息
           </Text>
+          <View className='line' />
         </View>
         <View className='index-center__content'>
           {this.state.current === 0 ? <Cards /> : null}
-          {this.state.current === 1 ? <UserInfo /> : null}
+          {this.state.current === 1 ? <User /> : null}
         </View>
       </View>
     );

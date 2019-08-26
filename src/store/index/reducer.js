@@ -1,4 +1,3 @@
-
 import * as type from "./action-type";
 
 export const counter = (state = 0, action = {}) => {
@@ -34,6 +33,16 @@ export const currentCardIndex = (state = 0, action = {}) => {
   switch (action.type) {
     case type.SET_CURRENT_CARD_INDEX:
       return action.index;
+    default:
+      return state;
+  }
+};
+
+export const shareCard = (state = { show: false }, action = {}) => {
+  const { value } = action;
+  switch (action.type) {
+    case type.SET_SHOW_SHARE_CARD:
+      return { ...state, show: value };
     default:
       return state;
   }

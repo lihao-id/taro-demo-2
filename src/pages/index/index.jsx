@@ -8,16 +8,23 @@ import Center from "components/index/center/IndexCenter";
 import Bottom from "components/index/bottom/IndexBottom";
 
 import * as Action from "store/index/action";
-import { NotifyContext, CardInfoContext } from "@/context/index/context";
+import {
+  NotifyContext,
+  CardInfoContext,
+  ShareCardContext
+} from "@/context/index/context";
 import * as Api from "api/api";
 
-import "./index.scss";
+import ShareCard from "components/share-card/ShareCard";
+
+import "./css/index.scss";
 
 @connect(
-  ({ notify, cardInfoList, currentCardIndex }) => ({
+  ({ notify, cardInfoList, currentCardIndex, shareCard }) => ({
     notify,
     cardInfoList,
-    currentCardIndex
+    currentCardIndex,
+    shareCard
   }),
   dispatch => ({
     setNotifyCount(count) {
@@ -28,6 +35,9 @@ import "./index.scss";
     },
     setCurrentCardIndex(index) {
       dispatch(Action.setCurrentCardIndex(index));
+    },
+    setShowShareCard(value) {
+      dispatch(Action.setShowShareCard(value));
     }
   })
 )
@@ -100,16 +110,31 @@ export default class Index extends Component {
             setCurrentIndex: this.props.setCurrentCardIndex
           }}
         >
-          <View className='index'>
-            <Image
-              className='bg-img'
-              src={Api.IMG_BASE_URL + "/index/bg.png"}
-            />
-            <Top />
-            <Center />
-            <View className='line' />
-            <Bottom />
-          </View>
+          <ShareCardContext.Provider
+            value={{
+              doOpen: () => {
+                this.props.setShowShareCard(true);
+              }
+            }}
+          >
+            <View className='index'>
+              <Image
+                className='bg-img'
+                src={Api.IMG_BASE_URL + "/index/bg.png"}
+              />
+              <Top />
+              <Center />
+              <View className='line' />
+              <Bottom />
+              {this.props.shareCard.show && (
+                <ShareCard
+                  onClose={() => {
+                    this.props.setShowShareCard(false);
+                  }}
+                />
+              )}
+            </View>
+          </ShareCardContext.Provider>
         </CardInfoContext.Provider>
       </NotifyContext.Provider>
     );

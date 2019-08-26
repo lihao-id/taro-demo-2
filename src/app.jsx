@@ -30,7 +30,9 @@ class App extends Component {
       "pages/index/index",
       "pages/home/Home",
       "pages/search/Search",
-      "pages/leave-message/LeaveMessage"
+      "pages/leave-message/LeaveMessage",
+      "pages/write-leave-message/WriteLeaveMessage",
+      "pages/service/Service"
     ],
     window: {
       backgroundTextStyle: "light",
